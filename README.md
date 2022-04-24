@@ -14,7 +14,7 @@ yarn run dev
 
 ## Running Tests
 
-1. Start test serve:
+1. Start test server:
 
 ```bash
 yarn run server
