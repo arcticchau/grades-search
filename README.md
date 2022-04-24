@@ -11,3 +11,13 @@ yarn install
 ```bash
 yarn run dev
 ```
+
+## Running Tests
+
+1. Start test serve:
+
+```bash
+yarn run server
+```
+
+2. In the Cypress IDE, choose which tests to run.

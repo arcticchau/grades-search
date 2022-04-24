@@ -5,8 +5,10 @@ dbConnect();
 
 export default async function handler(req, res) {
   const { schoolName } = req.query;
-  const grades = await Grade.find({
-    schoolName: { $regex: schoolName, $options: "i" },
-  });
+  const grades = schoolName
+    ? await Grade.find({
+        schoolName: { $regex: schoolName, $options: "i" },
+      })
+    : await Grade.find({});
   res.status(200).json(grades);
 }
