@@ -7,22 +7,18 @@ import SchoolSearch from "../components/SchoolSearch";
 export default function Home() {
   const [grades, setGrades] = useState([]);
 
-  const fetchStudents = async (schoolName) => {
+  const fetchGrades = async (schoolName) => {
     const res = await fetch(`/api/grades?schoolName=${schoolName}`);
     const data = await res.json();
     setGrades(data);
   };
 
   useEffect(() => {
-    fetchStudents("");
+    fetchGrades("");
   }, []);
 
-  const onDownload = () => {
-    console.log(grades);
-  };
-
   const onSearch = (schoolName) => {
-    fetchStudents(schoolName);
+    fetchGrades(schoolName);
   };
 
   return (
@@ -39,7 +35,7 @@ export default function Home() {
       <main>
         <Stack spacing={1} alignItems={"center"}>
           <h1>Grades</h1>
-          <SchoolSearch onDownload={onDownload} onSearch={onSearch} />
+          <SchoolSearch onSearch={onSearch} />
           <GradesReport grades={grades} />
         </Stack>
       </main>

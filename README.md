@@ -1,12 +1,14 @@
 ## Getting Started
 
-1. Install dependencies:
+1. Verify that version 16.14.0 of node.js (https://nodejs.org/en/) is installed.
+
+2. Install dependencies:
 
 ```bash
 yarn install
 ```
 
-2. Start development server:
+3. Start development server:
 
 ```bash
 yarn run dev
